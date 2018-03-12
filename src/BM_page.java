@@ -133,7 +133,7 @@ public class BM_page extends javax.swing.JFrame {
         }
         else if(selected.equals("Check or Edit tasks assigned"))
         {
-            task_BM tasks =new task_BM();
+            task_BM1 tasks =new task_BM1();
             tasks.setVisible(true);
             this.setVisible(false);
         }
