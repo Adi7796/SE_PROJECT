@@ -44,7 +44,7 @@ public class admin_page extends javax.swing.JFrame {
 
         jLabel3.setText("What would you like to do?");
 
-        cb.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NONE", "See or Edit Salary Details", "Check or Edit tasks assigned", "View or Edit Personal Details of Employees", "View or edit Branch Details" }));
+        cb.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NONE", "See or Edit Salary Details", "Check or Edit tasks assigned", "View or Edit Personal Details of Employees", "View or edit Branch Details", "Insert new Employee details" }));
 
         jButton1.setText("GO");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -143,6 +143,12 @@ public class admin_page extends javax.swing.JFrame {
         {
             Branch_admin branch=new Branch_admin();
             branch.setVisible(true);
+            this.setVisible(false);
+        }
+        else if(selected.equals("Insert new Employee details"))
+        {
+            InsertEmpDet_Admin insert=new InsertEmpDet_Admin();
+            insert.setVisible(true);
             this.setVisible(false);
         }
         else
