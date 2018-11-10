@@ -127,17 +127,12 @@ public class login_page extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void t1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_t1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_t1ActionPerformed
-
-    private void b1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b1ActionPerformed
-        // TODO add your handling code here:
-        String username=t1.getText();
+public void test(String username , String password , String e_id)
+{
+    /*String username=t1.getText();
         String password=t2.getText();
         String e_id=t3.getText();
-       
+      */ 
        try{
           
            Class.forName("com.mysql.jdbc.Driver");
@@ -171,6 +166,51 @@ public class login_page extends javax.swing.JFrame {
        catch(Exception e){
             JOptionPane.showMessageDialog(null,e);
        }
+}
+    private void t1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_t1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_t1ActionPerformed
+
+    private void b1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b1ActionPerformed
+        // TODO add your handling code here:
+        String username=t1.getText();
+        String password=t2.getText();
+        String e_id=t3.getText();
+        test(username,password,e_id);
+       /*
+       try{
+          
+           Class.forName("com.mysql.jdbc.Driver");
+           conn=(Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/employee_payroll?zeroDateTimeBehavior=convertToNull","root","");
+           JOptionPane.showMessageDialog(null,"Connection Established");
+           st=(PreparedStatement)conn.prepareStatement("select * from employee_login where Username=? and Password=? and E_id=?");
+           st.setString(1, username);
+           st.setString(2, password);
+           st.setString(3, e_id);
+           rs=st.executeQuery();
+           if(rs.next()){
+               JOptionPane.showMessageDialog(null,"Login Successful");
+               emp_login log=new emp_login();
+               log.l1.setText(username);
+               log.l3.setText(e_id);
+               log.setVisible(true);
+               this.setVisible(false);
+               
+               
+           }
+           else
+           {
+               JOptionPane.showMessageDialog(null,"Login Unsuccessful....... Please try again!");
+               t1.setText(null);
+               t2.setText(null);
+               t3.setText(null);
+               
+           }
+           
+       }
+       catch(Exception e){
+            JOptionPane.showMessageDialog(null,e);
+       }*/
     }//GEN-LAST:event_b1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

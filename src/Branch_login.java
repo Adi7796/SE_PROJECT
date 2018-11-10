@@ -124,12 +124,11 @@ public class Branch_login extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        String bm_uname=t1.getText();
+public void test(String bm_uname,String bm_id,String password)
+{
+    /*String bm_uname=t1.getText();
         String bm_id=t2.getText();
-        String password=p1.getText();
+        String password=p1.getText();*/
 
         try{
             Class.forName("com.mysql.jdbc.Driver");
@@ -164,6 +163,46 @@ public class Branch_login extends javax.swing.JFrame {
         {
             JOptionPane.showMessageDialog(null, e);
         }
+}
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        String bm_uname=t1.getText();
+        String bm_id=t2.getText();
+        String password=p1.getText();
+        test(bm_uname,bm_id,password);
+       /* try{
+            Class.forName("com.mysql.jdbc.Driver");
+            conn=(Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/employee_payroll?zeroDateTimeBehavior=convertToNull","root","");
+            JOptionPane.showMessageDialog(null,"Connection Established");
+            st=(PreparedStatement)conn.prepareStatement("select * from branch_login where username=? and Password=? and id=?");
+            st.setString(1, bm_uname);
+            st.setString(2, password);
+            st.setString(3, bm_id);
+            rs=st.executeQuery();
+            if(rs.next())
+            {
+                JOptionPane.showMessageDialog(null, "Login Successful");
+                BM_page page= new BM_page();
+                page.setVisible(true);
+                this.setVisible(false);
+                page.l1.setText(bm_uname);
+                page.l3.setText(bm_id);
+            }
+
+            else
+            {
+                JOptionPane.showMessageDialog(null,"Login Unsuccessful....... Please try again!");
+                t1.setText(null);
+                t2.setText(null);
+                p1.setText(null);
+
+            }
+        }
+
+        catch(Exception e)
+        {
+            JOptionPane.showMessageDialog(null, e);
+        }*/
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

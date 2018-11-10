@@ -41,6 +41,11 @@ public class login_option extends javax.swing.JFrame {
         jLabel2.setText("Login as :");
 
         cb.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Administrator", "Employee", "Branch Manager" }));
+        cb.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbActionPerformed(evt);
+            }
+        });
 
         jButton1.setText("Go ");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -109,6 +114,10 @@ public class login_option extends javax.swing.JFrame {
         else
             JOptionPane.showMessageDialog(null,"Please select a valid Option");
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void cbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbActionPerformed
 
     /**
      * @param args the command line arguments

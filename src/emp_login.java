@@ -20,6 +20,14 @@ public class emp_login extends javax.swing.JFrame {
         initComponents();
     }
     
+    public emp_login(String username, String id,String item){
+        initComponents();
+        l1.setText(username);
+        l3.setText(id);
+        cb.setSelectedItem(item);
+        test();
+    }
+    
     
 
     /**
@@ -116,12 +124,55 @@ public class emp_login extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    public void test(){
+      String username=l1.getText();
+        String e_id=l3.getText();
+        String selected=cb.getSelectedItem().toString();
+        System.out.println(username+" , "+e_id + " , "+ selected);
+        if(selected.equals("See Salary Details"))
+        {
+            salary_emp sal  =new salary_emp();
+            sal.setVisible(true);
+            this.setVisible(false);
+            sal.l12.setText(username);
+            sal.l13.setText(e_id);
+        }
+        else if(selected.equals("Check tasks assigned"))
+        {
+           tasks_emp tasks  =new tasks_emp();
+            tasks.setVisible(true);
+            this.setVisible(false);
+            tasks.l3.setText(e_id);
+            tasks.l4.setVisible(false);
+            tasks.l4.setText(username);
+        }
+        else if(selected.equals("See Personal Details"))
+        {
+            details_emp details  =new details_emp();
+            details.setVisible(true);
+            this.setVisible(false);
+            details.t1.setText(username);
+            details.t2.setText(e_id);
+            details.setVisible(true);
+            details.t1.setEditable(false);
+            details.t2.setEditable(false);
+            details.b2.setEnabled(false);
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null,"Please select an option");
+        }  
+    
+    }
+    
+    
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         String username=l1.getText();
         String e_id=l3.getText();
         String selected=cb.getSelectedItem().toString();
+        System.out.println(username+" , "+e_id + " , "+ selected);
         if(selected.equals("See Salary Details"))
         {
             salary_emp sal  =new salary_emp();
